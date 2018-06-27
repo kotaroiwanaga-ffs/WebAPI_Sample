@@ -77,14 +77,14 @@ namespace WebAPI_Sample.Controllers
         [Route("api/img/{id}")]
         public void Put(int id, [FromBody]List<string> tags)
         {
-            var list = imgList.Images
-                .Where(p => p.Id == id)
-                .Select(p => p);
+            var img = imgList.Images
+                .SingleOrDefault(p => p.Id == id);
 
-            foreach (Image img in list)
+            if(img != null)
             {
                 img.Tags = tags;
             }
+            
         }
 
         /// <summary>
