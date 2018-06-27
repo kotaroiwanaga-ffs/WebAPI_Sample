@@ -87,7 +87,6 @@ namespace WebAPI_Sample.Controllers
             }
         }
 
-
         /// <summary>
         /// 画像情報を削除できる
         /// </summary>
